@@ -4,9 +4,4 @@ python:
 install:
   - pip install -r requirements.txt
 script:
-  - git clone https://github.com/kivy/buildozer.git
-  - cd buildozer
-  - python3 setup.py install
-  - cd ..
-  - buildozer init
   - buildozer android release
