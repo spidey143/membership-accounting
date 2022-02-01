@@ -3,6 +3,7 @@ python:
   - "3.6"
 script:
   - git clone https://github.com/kivy/buildozer.git
+  - ll
   - cd buildozer
   - sudo python3 setup.py install
   - cd ..
