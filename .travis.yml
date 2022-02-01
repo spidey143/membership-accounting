@@ -5,7 +5,7 @@ install:
   - pip install -r requirements.txt
 script:
   - git clone https://github.com/kivy/buildozer.git
-  - ll
+  - ls
   - cd buildozer
   - sudo python3 setup.py install
   - cd ..
