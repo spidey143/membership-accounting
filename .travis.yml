@@ -4,3 +4,7 @@ python:
 script:
   - git clone https://github.com/kivy/buildozer.git
   - cd buildozer
+  - sudo python setup.py install
+  - cd ..
+  - buildozer init
+  - buildozer android deploy
