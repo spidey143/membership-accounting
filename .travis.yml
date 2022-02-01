@@ -15,3 +15,4 @@ script:
   - cd ..
   - buildozer init
   - buildozer android deploy
+  - y
