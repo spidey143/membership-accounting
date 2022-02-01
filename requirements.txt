@@ -1,2 +1,3 @@
 buildozer
 Cython
+python-for-android
