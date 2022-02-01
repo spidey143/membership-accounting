@@ -3,10 +3,9 @@ python:
   - "3.6"
 script:
   - git clone https://github.com/kivy/buildozer.git
-  - ls
+  - sudo python3 setup.py install
   - cd buildozer
   - python3 -m pip install -r requirements.txt
-  - sudo python3 setup.py install
   - cd ..
   - buildozer init
   - buildozer android deploy
