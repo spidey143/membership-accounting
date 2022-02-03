@@ -12,5 +12,3 @@ deploy:
   file_glob: true
   file: "*.apk"
   skip_cleanup: true
-  on:
-    tags: true
