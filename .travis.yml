@@ -12,6 +12,4 @@ deploy:
   file: "*.apk"
   skip_cleanup: true
   on:
-    branches:
-      only:
-        - main
+    branch: main
