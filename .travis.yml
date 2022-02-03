@@ -13,3 +13,4 @@ deploy:
   skip_cleanup: true
   on:
     branch: main
+    tags: false
