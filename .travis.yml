@@ -1,4 +1,7 @@
 language: python
+on:
+  branch: main
+  tags: false
 python:
   - "3.6"
 install:
@@ -11,6 +14,3 @@ deploy:
   file_glob: true
   file: "bin/*.apk"
   skip_cleanup: true
-  on:
-    branch: main
-    tags: false
