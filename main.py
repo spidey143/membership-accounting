@@ -1,6 +1,10 @@
+import kivy
+kivy.require('1.0.7')
+
 from kivy.app import App
 from kivy.properties import StringProperty
 from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
+import os
 
 from connected import Connected
 
@@ -23,12 +27,12 @@ class LoginApp(App):
     password = StringProperty(None)
 
     def build(self):
+        manager = ScreenManager()
 
-        sm = ScreenManager()
-        sm.add_widget(Login(name="login"))
-        sm.add_widget(Connected(name="connected"))
+        manager.add_widget(Login(name='login'))
+        manager.add_widget(Connected(name='connected'))
 
-        return sm
+        return manager
 
 if __name__ == '__main__':
     LoginApp().run()
