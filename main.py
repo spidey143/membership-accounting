@@ -1,38 +1,26 @@
-import kivy
-kivy.require('1.0.7')
-
-from kivy.app import App
-from kivy.properties import StringProperty
-from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
 import os
 
-from connected import Connected
+from kivy.app import App
+from kivy.lang.builder import Builder
+from kivy.uix.screenmanager import ScreenManager
 
-class Login(Screen):
-    def do_login(self, loginText, passwordText):
-        app = App.get_running_app()
+from screens.welcome import Welcome
+from screens.clients import Clients
 
-        app.username = loginText
-        app.password = passwordText
 
-        self.manager.transition = SlideTransition(direction="left")
-        self.manager.current = 'connected'
-
-    def resetForm(self):
-        self.ids['login'].text = ""
-        self.ids['password'].text = ""
-
-class LoginApp(App):
-    username = StringProperty(None)
-    password = StringProperty(None)
+class MembershipAccounting(App):
 
     def build(self):
-        manager = ScreenManager()
+        sm = ScreenManager()
 
-        manager.add_widget(Login(name='login'))
-        manager.add_widget(Connected(name='connected'))
+        Builder.load_file(os.path.join(os.getcwd(), 'designs', 'welcome.kv'))
+        sm.add_widget(Welcome(name='welcome'))
 
-        return manager
+        Builder.load_file(os.path.join(os.getcwd(), 'designs', 'clients.kv'))
+        sm.add_widget(Clients(name='clients'))
+
+        return sm
+
 
 if __name__ == '__main__':
-    LoginApp().run()
+    MembershipAccounting().run()
