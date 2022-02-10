@@ -10,13 +10,11 @@ class Welcome(Screen):
             self.current_provider = login_providers.google
 
     def login(self):
-        print('login')
         initialize_google(self.after_login, self.error_listener)
 
     def after_login(self, **qwargs):
-        print(qwargs)
         self.manager.transition = SlideTransition(direction="left")
         self.manager.current = 'clients'
 
     def error_listener(self, **qwargs):
-        print(qwargs)
+        pass
