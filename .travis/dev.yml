@@ -1,0 +1,10 @@
+deploy:
+  provider: releases
+  prerelease: true
+  api_key: "$GITHUB"
+  file_glob: true
+  file: "bin/*.apk"
+  skip_cleanup: true
+  on:
+    branch: dev
+    tags: false
