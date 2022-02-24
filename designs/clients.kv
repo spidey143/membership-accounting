@@ -1,5 +1,18 @@
 <Clients>:
-    BoxLayout:
+    FloatLayout:
+        orientation: 'vertical'
+        padding: 100
+        spacing: 100
+        TextInput:
+        multiline: false
+        size_hint: (.3,None)
+        pos_hint: {'center_x': 0.5, 'top': 0.9}
+        height: 45
         Button:
-            text: 'Выйти'
-            on_press: root.logout()
+            text: 'Новый клиент'
+            pos: 840, 100
+            size_hint: 0.1, 0.1
+        Button:
+            text: 'Сканировать'
+            pos: 840, 100
+            size_hint: 0.1, 0.1
