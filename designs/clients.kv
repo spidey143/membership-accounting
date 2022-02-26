@@ -1,25 +1,44 @@
 <Clients>:
     FloatLayout:
         orientation: 'vertical'
+        padding: 20
+        spacing: 20
+        canvas.before:
+            Color:
+                rgba: 100, 100, 100, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        orientation: 'vertical'
         padding: 100
         spacing: 100
-        TextInput:
-            multiline: false
-            size_hint: (.3,None)
-            pos_hint: {'center_x': 0.5, 'top': 0.9}
-            height: 45
         Label:
-            text:
+            text:'[color=000000]Клиенты[/color]'
             font_size: 25
             markup: True
             font_name: "Roboto"
-            size_hint: (0.5,0.2)
-            pos_hint: {'center x': 0.35, 'top': 0.85}
+            size_hint: (0.5, 0.2)
+            pos_hint:{"center_x":0.5, "top": 1}
+        TextInput:
+            multiline: False
+            size_hint: (0.8 ,None)
+            pos_hint: {'center_x': 0.5, 'top': 0.85}
+            height: 45
+        Label:
+            text:'[color=000000]Список клиентов[/color]'
+            font_size: 25
+            markup: True
+            font_name: "Roboto"
+            size_hint: (0.5, 0.2)
+            pos_hint:{"center_x":0.35, "top": 0.85}
         Button:
             text: 'Новый клиент'
-            pos: 840, 100
-            size_hint: 0.1, 0.1
+            pos_hint:{"center_x":0.25, "top":0.2}
+            size_hint: 0.3, 0.1
+            background_color: [0,0,0]
+            on_press: root.manager.current = 'NewClient'
         Button:
             text: 'Сканировать'
-            pos: 840, 100
-            size_hint: 0.1, 0.1
+            pos_hint:{"center_x":0.75, "top":0.2}
+            size_hint: 0.3, 0.1
+            background_color: [0,0,0]
